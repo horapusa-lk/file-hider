@@ -1,6 +1,8 @@
 # file-hider
 You can hide and protect your files using this software.
 
+![logo](https://telegra.ph/file/60f5906dd4cea043173f5.png)
+
 ## Supported systems
 
 The latest version is available for
