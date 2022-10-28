@@ -8,16 +8,19 @@ class File:
         # check key is avilerble
         try:
             # opening the key
-            with open('encryption.key', 'rb') as file_key:
+            
+            with open('C:/key/encryption.key', 'rb') as file_key:
                 key = file_key.read()
         except Exception:
+            os.system("md C:/key")
+            os.system("attrib +h +s C:/key")
             # key generation
             key = Fernet.generate_key()
 
             # string the key in a file
-            with open('encryption.key', 'wb') as file_key:
+            with open('C:/key/encryption.key', 'wb') as file_key:
                 file_key.write(key)
-            with open('encryption.key', 'rb') as file_key:
+            with open('C:/key/encryption.key', 'rb') as file_key:
                 key = file_key.read()
 
         # using the generated key
@@ -37,7 +40,7 @@ class File:
 
     def decrypt(self, file_name):
         # opening the key
-        with open('encryption.key', 'rb') as file_key:
+        with open('C:/key/encryption.key', 'rb') as file_key:
             key = file_key.read()
 
         # using the key
